@@ -19,10 +19,7 @@ jobs:
        aws s3 sync . "$AWS_S3_BUCKET"
        echo "file Updated"
        echo "Website updated"
-  #  - name: Invalidation request   
-   #   run: |
-         
-
-      
-       #CLOUDFRONT_ID: ${{secrets.CLOUDFRONT_ID}}
+       
+    - name: delpoy to s3
+      run: aws s3 cp index.html s3://"${{secrets.AWS_S3_BUCKET}}"
         
